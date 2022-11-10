@@ -3,7 +3,7 @@
 Console.WriteLine("Программа, которая задаёт массив из 8 целых чисел с клавиатуры");
 Console.WriteLine("Введите числа, после каждого числа нажмите Enter: ");
 
-int[] GetSqrtTable()
+int[] FormArray()
 {
 int[] array = new int[8];
 for (int i = 0; i < array.Length; i++)
@@ -16,6 +16,6 @@ for (int i = 0; i < array.Length; i++)
 Console.Write($"{array[i]},");
 }
 
-int[] array = GetSqrtTable();
+int[] array = FormArray();
 PrintArray(array);
 //Console.WriteLine($"{array[0]}, {array[1]}, {array[2]}, {array[3]}, {array[4]}, {array[5]}, {array[6]}, {array[7]}");
