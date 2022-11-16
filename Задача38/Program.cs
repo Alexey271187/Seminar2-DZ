@@ -1,23 +1,23 @@
 ﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива
-int[] ArrayNumbers()
+double[] ArrayNumbers()
 {
-var result = new int[6];
+var result = new double[6];
 
 Random random = new();
 
 for (int i = 0; i < result.Length; i++)
 {
-result[i] = random.Next(1,99);
+result[i] = random.NextDouble() * 100;
 }
 
 return result;
 }
 
-void Print(int[] input)
+void Print(double[] input)
 {
 for (int i = 0; i < input.Length; i++)
 {
-Console.Write(input[i]);
+Console.Write(input[i].ToString("0.###"));
 
 if (i != input.Length - 1)
 Console.Write(", ");
@@ -25,11 +25,11 @@ Console.Write(", ");
 Console.WriteLine();
 }
 
-int FindingTheDifference(int[] input)
+double FindingTheDifference(double[] input)
 {
-int result = 0;
-int max = 0;
-int min = 0;
+double result = 0;
+double max = 0;
+double min = 0;
 for (int i = 0; i < input.Length; i++)
 {
     if (input[i] > max)
@@ -45,14 +45,16 @@ for (int i = 0; i < input.Length; i++)
         min = input[i];
     } 
 }
-Console.WriteLine("Максимальный элемент: " + max);
-Console.WriteLine("Минимальный элемент: " + min);
+Console.WriteLine("Максимальный элемент: " + max.ToString("0.###"));
+Console.WriteLine("Минимальный элемент: " + min.ToString("0.###"));
 result = max - min;
 return result;
 }
 
 var array = ArrayNumbers();
 Print(array);
-
 var Difference = FindingTheDifference(array);
-Console.WriteLine("Разница между максимальным и минимальным элементами массива: " + Difference);
+Console.WriteLine("Разница между максимальным и минимальным элементами массива: " + Difference.ToString("0.###"));
+
+//var Difference = FindingTheDifference(array);
+//Console.WriteLine("Разница между максимальным и минимальным элементами массива: " + Difference);
